@@ -111,6 +111,7 @@ end
   
   function library:Window(WindowArgs)
   WindowArgs.Text = WindowArgs.Text or "Window"
+  WindowArgs.Size = WindowArgs.Size or UDim2.new(0, 600, 0, 400)
   
   local WindowTable = {}
   WindowTable.__index = WindowTable
@@ -126,7 +127,7 @@ end
   }, {
       Utilities:Create("Frame", {
           Name = "Main",
-          Size = UDim2.new(0, 600, 0, 400),
+          Size = WindowArgs.Size,
           BackgroundColor3 = Color3.fromRGB(255, 255, 255), -- Colors.Primary
           ClipsDescendants = true,
           Position = UDim2.new(0, 600, 0, 270)
